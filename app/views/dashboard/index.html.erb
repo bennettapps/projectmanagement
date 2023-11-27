@@ -1,0 +1,20 @@
+<h1 class="mt-5 mx-5">Dashboard</h1>
+
+<table class="mt-5 mx-5 table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Completion (percentage of tasks complete)</th>
+      <th>Overdue tasks (count)</th>
+    </tr>
+    <tbody> 
+      <% @projects.each do |project| %>
+        <tr>
+          <td><%= link_to project.name, project_path(project) %></td>
+          <td><%= "--%" %></td>
+          <td><%= "--%" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </thead>
+</table>
