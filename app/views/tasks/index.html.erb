@@ -14,11 +14,19 @@
     <tbody> 
       <% @tasks.each do |task| %>
         <tr>
+          <% date = "#{task.year}-#{task.month}-#{task.day}" %>
+          <% overdue = Date.today.to_s > date && !task.complete %>
           <td><%= link_to task.name, [@project, task] %></td>
-          <td><%= "#{task.year}-#{task.month}-#{task.day}" %></td>
+          <td><%= date %></td>
           <td><%= task.complete %></td>
-          <td><%= "true/false" %></td>
-          <td><%= "" %></td>
+          <td><%= overdue %></td>
+          <td>
+            <% if task.complete %>
+              &#10004; <!-- Checkmark symbol -->
+            <% elsif overdue %>
+              &#10008; <!-- Cross symbol -->
+            <% end %>
+          </td>
         </tr>
       <% end %>
     </tbody>

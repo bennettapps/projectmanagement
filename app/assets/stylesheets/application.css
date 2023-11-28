@@ -29,3 +29,16 @@
     max-width: 20rem;
     margin: 2rem auto;
   }
+  .status-icon {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  
+  .green {
+    background-color: green;
+  }
+  
+  .red {
+    background-color: red;
+  }
