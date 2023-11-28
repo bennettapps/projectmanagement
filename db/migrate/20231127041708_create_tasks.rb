@@ -2,7 +2,9 @@ class CreateTasks < ActiveRecord::Migration[7.0]
   def change
     create_table :tasks do |t|
       t.string :name
-      t.string :date
+      t.integer :year
+      t.integer :month
+      t.integer :day
       t.boolean :complete
       t.boolean :overdue
       t.boolean :status
