@@ -23,7 +23,7 @@
       <% @tasks.each do |task| %>
         <tr>
           <% date = "#{task.year}-#{task.month}-#{task.day}" %>
-          <% overdue = Date.today.to_s > date && !task.complete %>
+          <% overdue = Date.today > Date.new(task.year, task.month, task.day) && !task.complete %>
           <td><%= link_to task.name, [@project, task] %></td>
           <td><%= date %></td>
           <td><%= task.complete %></td>

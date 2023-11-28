@@ -12,15 +12,19 @@ Project.create(name: 'Project 2', description: "Random Text")
 Project.create(name: 'Project 3', description: "Random Text")
 
 3.times do |i|
-  project = Project.find_by(name: "Project #{i+1}")
-  5.times do |j|
-    Task.create(
-      project: project,
-      name: "Task #{j+1}",
-      year: Date.today.year + rand(1..365),
-      month: rand(1..12),
-      day: rand(1..31),
-      complete: [true, false].sample
-    )
+    project = Project.find_by(name: "Project #{i+1}")
+    5.times do |j|
+      year = Date.today.year + rand(0..1)
+      month = rand(1..12)
+      last_day = Date.new(year, month, -1).day
+  
+      Task.create(
+        project: project,
+        name: "Task #{j+1}",
+        year: year,
+        month: month,
+        day: rand(1..last_day),
+        complete: [true, false].sample
+      )
+    end
   end
-end

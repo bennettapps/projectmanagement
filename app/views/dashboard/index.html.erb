@@ -12,7 +12,7 @@
         <tr>
           <td><%= link_to project.name, project_path(project) %></td>
           <td><%= project.tasks.where(complete: true).count * 100 / [project.tasks.count, 1].max %>%</td>
-          <td><%= project.tasks.select { |t| Date.today.to_s > "#{t.year}-#{t.month}-#{t.day}" && !t.complete}.count %></td>
+          <td><%= project.tasks.select { |t| Date.today > Date.new(t.year, t.month, t.day) && !t.complete }.count %></td>
         </tr>
       <% end %>
     </tbody>
