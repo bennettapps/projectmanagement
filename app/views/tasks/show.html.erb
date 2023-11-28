@@ -1,3 +1,12 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to "Projects", projects_path %></li>
+    <li class="breadcrumb-item"><%= link_to @project.name, @project %></li>
+    <li class="breadcrumb-item"><%= link_to "Tasks", project_tasks_path %></li>
+    <li class="breadcrumb-item"><%= @task.name %></li>
+  </ol>
+</nav>
+
 <p style="color: green"><%= notice %></p>
 
 <%= render @task %>
