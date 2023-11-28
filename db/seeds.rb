@@ -6,3 +6,21 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 User.create(email: 'admin@projects.local', password: 'Pass1234')
+
+Project.create(name: 'Project 1', description: "Random Text")
+Project.create(name: 'Project 2', description: "Random Text")
+Project.create(name: 'Project 3', description: "Random Text")
+
+3.times do |i|
+  project = Project.find_by(name: "Project #{i+1}")
+  5.times do |j|
+    Task.create(
+      project: project,
+      name: "Task #{j+1}",
+      year: Date.today.year + rand(1..365),
+      month: rand(1..12),
+      day: rand(1..31),
+      complete: [true, false].sample
+    )
+  end
+end
