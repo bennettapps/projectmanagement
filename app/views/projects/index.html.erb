@@ -1,18 +1,16 @@
-<div class="mt-5 mx-5">
-  <p style="color: green"><%= notice %></p>
+<p style="color: green"><%= notice %></p>
 
-  <h1>Projects</h1>
+<h1>Projects</h1>
 
-  <div id="projects">
-    <% @projects.each do |project| %>
-      <div class="card" style="padding: 20px; margin-bottom: 25px; margin-top: 25px;">
-        <%= render project %>
-        <p>
-          <%= link_to "Show this project", project %>
-        </p>
-      </div>
-    <% end %>
-  </div>
-
-  <%=link_to "New project", new_project_path %>
+<div id="projects">
+  <% @projects.each do |project| %>
+    <div class="card" style="padding: 20px; margin-bottom: 25px; margin-top: 25px;">
+      <%= render project %>
+      <p>
+        <%= link_to "Show this project", project %>
+      </p>
+    </div>
+  <% end %>
 </div>
+
+<%=link_to "New project", new_project_path %>

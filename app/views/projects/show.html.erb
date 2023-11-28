@@ -1,13 +1,11 @@
-<div class="mt-5 mx-5">
-  <p style="color: green"><%= notice %></p>
+<p style="color: green"><%= notice %></p>
 
-  <%= render @project %>
+<%= render @project %>
 
-  <div>
-    <%= link_to "Edit this project", edit_project_path(@project) %> |
-    <%= link_to "Back to projects", projects_path %> |
-    <%= link_to "Tasks", project_tasks_path(@project) %>
+<div>
+  <%= link_to "Edit this project", edit_project_path(@project) %> |
+  <%= link_to "Back to projects", projects_path %> |
+  <%= link_to "Tasks", project_tasks_path(@project) %>
 
-    <%= button_to "Destroy this project", @project, method: :delete %>
-  </div>
+  <%= button_to "Destroy this project", @project, method: :delete %>
 </div>
