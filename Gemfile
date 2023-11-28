@@ -49,6 +49,8 @@ gem "bootsnap", require: false
 gem "image_processing", "~> 1.2"
 
 gem "simple_form"
+gem "devise"
+gem 'devise-bootstrap-views', '~> 1.0'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -64,6 +66,7 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem 'letter_opener_web', '~> 2.0'
 end
 
 group :test do
