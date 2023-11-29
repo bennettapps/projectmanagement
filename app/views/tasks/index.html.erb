@@ -28,13 +28,13 @@
           <td><%= date %></td>
           <td><%= task.complete %></td>
           <td><%= overdue %></td>
-          <td>
-            <% if task.complete %>
-              &#10004; <!-- Checkmark symbol -->
-            <% elsif overdue %>
-              &#10008; <!-- Cross symbol -->
-            <% end %>
-          </td>
+          <% if task.complete %>
+            <td><span class="badge" style="background-color: green">Complete</span></td>
+          <% elsif overdue %>
+            <td><span class="badge" style="background-color: red">Overdue</span></td>
+          <% else %>
+            <td></td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>
